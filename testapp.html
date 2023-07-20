@@ -4,6 +4,7 @@
 <style>
 body {
 display: flex;
+flex-direction: column-reverse;
 justify-content: center;
 align-items: center;
 height: 100vh;
@@ -13,11 +14,11 @@ background-color: #f0f0f0;
 </style>
 </head>
 <body>
-<div id="display"></div>
 <form id="myForm">
 <input type='text' id='myInput' placeholder='Enter text here...'>
 <button type="submit">Submit</button>
 </form>
+<div id="display"></div>
 
 <script>
 document.getElementById("myForm").addEventListener("submit", function(event){
