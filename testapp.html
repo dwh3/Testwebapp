@@ -13,6 +13,21 @@ background-color: #f0f0f0;
 </style>
 </head>
 <body>
-<input type='text' placeholder='Enter text here...'>
+<div id="display"></div>
+<form id="myForm">
+<input type='text' id='myInput' placeholder='Enter text here...'>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  var input = document.getElementById("myInput");
+  var display = document.getElementById("display");
+  display.innerHTML = input.value;
+  input.value = "";
+});
+</script>
+
 </body>
 </html>
