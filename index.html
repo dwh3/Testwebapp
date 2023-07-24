@@ -13,7 +13,7 @@
         /* Styles for the header */
         .header {
             position: fixed;
-            top: 0;
+            top: 30px; /* Adjusted to accommodate the disclaimer */
             width: 100%;
             background-color: #ffffff;
             padding: 10px;
@@ -54,7 +54,7 @@
         /* Styles for the sidebar */
         .sidebar {
             position: fixed;
-            top: 120px; /* Adjust this value based on the height of your header */
+            top: 150px; /* Adjust this value based on the height of your header */
             left: 0;
             width: 200px;
             height: calc(100% - 60px); /* Adjust this value based on the height of your header */
@@ -75,18 +75,36 @@
         .main-content {
             margin-left: 220px;
             padding: 20px;
-            padding-top: 60px; /* Adjust this value based on the height of your header */
+            padding-top: 90px; /* Adjust this value based on the height of your header */
         }
         div[id^="dummy-"] {
             position: relative;
-            top: -90px; /* Adjust this value based on the height of your header */
+            top: -120px; /* Adjust this value based on the height of your header */
             visibility: hidden;
+        }
+        /* Styles for the disclaimer */
+        .disclaimer {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background-color: #f6f6f6;
+            color: #333;
+            font-size: 0.8em;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+
     <div class="header">
         <h1>David Hummel's Wiki</h1>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        All contents within this website, except for the links to the Political Science publications, were created by me and are hosted in my <a href="https://github.com/dwh3/Testwebapp">GitHub repository</a>.
     </div>
     
     <!-- Sidebar with links to sections -->
