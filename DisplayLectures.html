@@ -36,15 +36,19 @@
 
     .content {
       display: none;
-      padding: 0 18px;
+      padding: 0;
       overflow: hidden;
       background-color: #f1f1f1;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     /* Style for the buttons within the collapsible section */
     .content button {
-      display: block;
+      display: none;
       margin-bottom: 8px;
+      margin-right: 8px; /* Add some space between buttons */
+      width: fit-content; /* Set the buttons to fit the content width */
     }
 
     /* Style for the active (blue) button */
@@ -66,8 +70,36 @@
   Select Lesson
 </button>
 <div class="content" id="lessonContent">
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html')" class="active">Lecture 1</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html')">Lecture 2</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html')" class="active">R Basics</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Functions and Packages.html')">Functions and Packages</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Programming and Scripts.html')">Programming and Scripts</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html')">Vectors and Matrices in R</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Data Manipulation.html')">Data Manipulation</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Datasets.html')">Datasets</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Graphics.html')">Graphics</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - PDFs and CDFs.html')">PDFs and CDFs</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - Probability Basics.html')">Probability Basics</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Features of Normal Dist-Z Scores.html')">Features of Normal Dist-Z Scores</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Key Distributions.html')">Key Distributions</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/T Distributions (Small Samples).html')">T Distributions (Small Samples)</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing.html')">Hypothesis Testing</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Sampling - CLT - Confidence Intervals.html')">Sampling - CLT - Confidence Intervals</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Simulations.html')">Simulations</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Linear Regression and OLS.html')">Linear Regression and OLS</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Derivation of OLS.html')">Derivation of OLS</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Expectations and OVB.html')">Expectations and OVB</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing and RSquared.html')">Hypothesis Testing and RSquared</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Clean Regression Results.html')">Clean Regression Results</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Multicollinearity.html')">Multicollinearity</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Violations of Unbiasedness.html')">Violations of Unbiasedness</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Categorical Independent Variables.html')">Categorical Independent Variables</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Interaction Terms.html')">Interaction Terms</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Non-linear Functional Forms.html')">Non-linear Functional Forms</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Logistic Regression.html')">Logistic Regression</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Lasso and Ridge Regressions.html')">Lasso and Ridge Regressions</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Supervised Learning.html')">Supervised Learning</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Unsupervised Learning.html')">Unsupervised Learning</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Support Vector Machines.html')">Support Vector Machines</button>
 </div>
 
 <iframe id="lectureFrame" src="https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html" style="width:100%;height:700px;"></iframe>
@@ -76,7 +108,22 @@
   // JavaScript to handle collapsible behavior
   function toggleCollapsible() {
     var content = document.getElementById("lessonContent");
-    content.style.display = content.style.display === "block" ? "none" : "block";
+    var buttons = document.querySelectorAll("#lessonContent button");
+
+    if (content.style.display === "block") {
+      // Collapse the section and hide the buttons
+      content.style.display = "none";
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "none";
+      }
+    } else {
+      // Expand the section and show the buttons
+      content.style.display = "block";
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "inline-block";
+      }
+    }
+
     document.querySelector(".collapsible").classList.toggle("active");
   }
 
