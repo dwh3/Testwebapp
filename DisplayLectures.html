@@ -1,21 +1,95 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    /* Style for the collapsible section */
+    .collapsible {
+      cursor: pointer;
+      padding: 18px 40px 18px 50px; /* Adjust the padding for arrow space */
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      background-color: #f1f1f1;
+      position: relative;
+    }
+
+    /* Style for the arrow icon */
+    .arrow {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 18px; /* Adjust the arrow position */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .arrow::before {
+      content: '\25B6'; /* Unicode code for right-pointing arrow */
+      font-size: 16px;
+    }
+
+    .collapsible.active .arrow::before {
+      content: '\25BC'; /* Unicode code for down-pointing arrow */
+    }
+
+    .content {
+      display: none;
+      padding: 0 18px;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+
+    /* Style for the buttons within the collapsible section */
+    .content button {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Style for the active (blue) button */
+    .content button.active {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
 <body>
 
+<!-- Link the "Homepage" text to your homepage URL -->
+<a href="https://dwh3.github.io/Testwebapp/">Homepage</a>
 <h2>Lecture Materials</h2>
 
-<button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html')">Lecture 1</button>
-<button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html')">Lecture 2</button>
+<!-- Collapsible section for buttons -->
+<button class="collapsible" onclick="toggleCollapsible()">
+  <span class="arrow"></span>
+  Select Lesson
+</button>
+<div class="content" id="lessonContent">
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html')" class="active">Lecture 1</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html')">Lecture 2</button>
+</div>
 
 <iframe id="lectureFrame" src="https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html" style="width:100%;height:700px;"></iframe>
 
 <script>
-    function changeLecture(lectureUrl) {
-        document.getElementById('lectureFrame').src = lectureUrl;
+  // JavaScript to handle collapsible behavior
+  function toggleCollapsible() {
+    var content = document.getElementById("lessonContent");
+    content.style.display = content.style.display === "block" ? "none" : "block";
+    document.querySelector(".collapsible").classList.toggle("active");
+  }
+
+  function changeLecture(lectureUrl) {
+    document.getElementById('lectureFrame').src = lectureUrl;
+    // Highlight the currently selected lecture button
+    var buttons = document.querySelectorAll("#lessonContent button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
     }
+    event.target.classList.add("active");
+  }
 </script>
 
 </body>
 </html>
-
-
