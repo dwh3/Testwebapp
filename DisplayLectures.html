@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Lecture Materials</h2>
+
+<button onclick="changeLecture('C:/Users/david/Dropbox/Teaching Materials/Econ 5140 Teaching/Lectures/Previously Taught Material/Lecture 1/R Basics.html')">Lecture 1</button>
+<button onclick="changeLecture('C:/Users/david/Dropbox/Teaching Materials/Econ 5140 Teaching/Lectures/Previously Taught Material/Lecture 1/R Vectors and Matrices.html')">Lecture 2</button>
+
+<iframe id="lectureFrame" src="C:/Users/david/Dropbox/Teaching Materials/Econ 5140 Teaching/Lectures/Previously Taught Material/Lecture 1/R Basics.html" style="width:100%;height:700px;"></iframe>
+
+<script>
+    function changeLecture(lectureUrl) {
+        document.getElementById('lectureFrame').src = lectureUrl;
+    }
+</script>
+
+</body>
+</html>
