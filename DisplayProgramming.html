@@ -1,205 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Wikipedia Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f6f6f6;
-            scroll-padding-top: 100px; /* Adjust this value based on the height of your header */
-        }
-        /* Styles for the header */
-        .header {
-            position: fixed;
-            top: 30px; /* Adjusted to accommodate the disclaimer */
-            width: 100%;
-            background-color: #ffffff;
-            padding: 10px;
-            border-bottom: 1px solid #a2a9b1;
-            z-index: 1;
-        }
-        .content {
-            margin: 20px auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border: 1px solid #a2a9b1;
-        }
-        .content-row {
-            display: flex;
-            justify-content: space-between;
-        }
-        .content-row p {
-            width: 80%;
-        }
-        .grey-box {
-            width: 20%;
-            height: 4cm;
-            background-color: lightgrey;
-            margin-right: 1cm;
-        }
-        h1, h2 {
-            color: #222222;
-        }
-        p {
-            color: #333333;
-        }
-        .line {
-            height: 1px;
-            background-color: #a2a9b1;
-            margin: 10px auto;
-            width: 100%;
-        }
-        .line2 {
-            height: 1px;
-            background-color: #a2a9b1;
-            margin: 10px auto;
-            width: 80%;
-        }
-        /* Styles for the sidebar */
-        .sidebar {
-            position: fixed;
-            top: 150px; /* Adjust this value based on the height of your header */
-            left: 0;
-            width: 200px;
-            height: calc(100% - 60px); /* Adjust this value based on the height of your header */
-            background-color: #f6f6f6;
-            padding: 20px;
-            overflow: auto;
-        }
+  <style>
+    /* Style for the collapsible section */
+    .collapsible {
+      cursor: pointer;
+      padding: 18px 40px 18px 50px; /* Adjust the padding for arrow space */
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      background-color: #f1f1f1;
+      position: relative;
+    }
 
-        /* Styles for the sidebar links */
-        .sidebar a {
-            display: block;
-            color: blue;
-            text-decoration: none;
-            margin-bottom: 25px;
-        }
-        details a {
-            padding-left: 30px;
-        }
-        a {
-            margin-top: 10px;
-        }
+    /* Style for the arrow icon */
+    .arrow {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 18px; /* Adjust the arrow position */
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
+    .arrow::before {
+      content: '\25B6'; /* Unicode code for right-pointing arrow */
+      font-size: 16px;
+    }
 
+    .collapsible.active .arrow::before {
+      content: '\25BC'; /* Unicode code for down-pointing arrow */
+    }
 
-        /* Styles for the main content area */
-        .main-content {
-            margin-left: 220px;
-            padding: 20px;
-            padding-top: 90px; /* Adjust this value based on the height of your header */
-        }
-        div[id^="dummy-"] {
-            position: relative;
-            top: -120px; /* Adjust this value based on the height of your header */
-            visibility: hidden;
-        }
-        /* Styles for the disclaimer */
-        .disclaimer {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 2;
-            background-color: #f6f6f6;
-            color: #333;
-            font-size: 0.8em;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+    .content {
+      display: none;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Style for the buttons within the collapsible section */
+    .content button {
+      display: none;
+      margin-bottom: 8px;
+      margin-right: 8px; /* Add some space between buttons */
+      width: fit-content; /* Set the buttons to fit the content width */
+    }
+
+    /* Style for the active (blue) button */
+    .content button.active {
+      background-color: blue;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>David Hummel's Wiki</h1>
-    </div>
+<!-- Link the "Homepage" text to your homepage URL -->
+<a href="https://dwh3.github.io/Testwebapp/">Homepage</a>
+<h2>Lecture Materials</h2>
 
-    <!-- Disclaimer -->
-    <div class="disclaimer">
-        All contents within this website, except for the links to the Political Science publications, were created by me and are hosted in my <a href="https://github.com/dwh3/Testwebapp" target="_blank">GitHub repository</a>.
-    </div>
-    
-    <!-- Sidebar with links to sections -->
-    <div class="sidebar">
-        <!--<a href="#My-Background">My Background</a>-->
-        <a href="#dummy-my-background">My Background</a>
-        <a href="#dummy-Teaching">Teaching</a>
-        <details>
-            <summary>Research</summary>
-            <a href="#dummy-academic">Academic</a>
-            <a href="#dummy-industry">Industry</a>
-        </details>
-    </div>
+<!-- Collapsible section for buttons -->
+<button class="collapsible" onclick="toggleCollapsible()">
+  <span class="arrow"></span>
+  Select Lesson
+</button>
+<div class="content" id="lessonContent">
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/GoogleMapsAPIRetrieval.html')">Google Maps API</button>
+</div>
 
-    <!-- Main content area -->
-    <div class="main-content">
+<iframe id="lectureFrame" src="https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/GoogleMapsAPIRetrieval.html" style="width:100%;height:700px;"></iframe>
 
-    <div class="content">
-        <div id="dummy-my-background"></div>
-        <h2 id="My-Background">My Background</h2>
-        <div class="line"></div>
-        <div class="content-row">
-            <p>Born and raised in the scenic town of Moundsville, West Virginia, David developed a deep-seated passion for mathematics,
-                 computer science, and basketball from a young age. This passion led David to Ohio State University, where he pursued an
-                  undergraduate degree that combined these interests. After graduation, David embarked on a professional journey at Lockheed Martin,
-                   gaining invaluable experience in the field. However, his thirst for knowledge was not yet quenched. David decided to delve deeper 
-                   into the world of economics, pursuing a Ph.D. in the subject. Today, David stands as a testament to the power of passion and dedication, 
-                   with a rich academic and professional background that spans multiple disciplines.
-                <br>
-                <!--<a href="https://dwh3.github.io/Testwebapp/90sweb.html" style="color: blue;">Link to other page</a><br>-->
-                <!--<a href="https://dwh3.github.io/Testwebapp/90swebsecondpage.html" style="color: blue;">Link to another page</a>-->
-            </p>
-            <div class="grey-box"></div>
-        </div>
-        <div style="height: 3cm;"></div>
-        <div id="dummy-Teaching"></div>
-        <h2 id="Teaching">Teaching</h2>
-        <div class="line"></div>
-        <p>
-            Want to mention Math Camp, graduate econometrics, and TA duties (at Northeastern and Harvard), as well as teaching at Bentley University.
-            In the Spring of 2022, I taught Master's level Econometrics at Northeastern University. The lectures for my course material 
-            <a href="https://dwh3.github.io/Testwebapp/DisplayLectures.html">can be found here</a>.
+<script>
+  // JavaScript to handle collapsible behavior
+  function toggleCollapsible() {
+    var content = document.getElementById("lessonContent");
+    var buttons = document.querySelectorAll("#lessonContent button");
 
-        </p>
+    if (content.style.display === "block") {
+      // Collapse the section and hide the buttons
+      content.style.display = "none";
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "none";
+      }
+    } else {
+      // Expand the section and show the buttons
+      content.style.display = "block";
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "inline-block";
+      }
+    }
 
-            <div style="height: 3cm;"></div>
-        <div id="dummy-Research"></div>
-        <h2 id="Research">Research</h2>
-        <div class="line"></div>
-            <!-- Academic subsection -->
-            <div id="dummy-academic"></div>
-            <h3 id="Academic">Academic</h3>
-            <h4 id="Publications">Work in Progress</h4>
-            <p> I have my coding demonstrations <a href="https://dwh3.github.io/Testwebapp/DisplayProgramming.html"> here</a> </p>
+    document.querySelector(".collapsible").classList.toggle("active");
+  }
 
+  function changeLecture(lectureUrl) {
+    document.getElementById('lectureFrame').src = lectureUrl;
+    // Highlight the currently selected lecture button
+    var buttons = document.querySelectorAll("#lessonContent button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
+    }
+    event.target.classList.add("active");
+  }
+</script>
 
-            <h4 id="Publications">Publications</h4>
-            <p>Words describing what I did during my time working with the Political Science group. During this time, we created two papers which were subsequently published. <br><br>
-
-                The first was <a href="https://academic.oup.com/pnasnexus/article/1/1/pgac011/6545770" target="_blank">"The harmful effects of partisan polarization on health", published in PNAS NEXUS</a>. <br><br>
-
-                The second was <a href="https://journals.sagepub.com/doi/abs/10.1177/10659129211034561" target="_blank">"Bridging the Divide: Does Social Capital Moderate the Impact of Polarization on Health?", published in Political Research Quarterly</a>. <br><br>
-                was something else. 
-            </p>
-            <!-- Industry subsection -->
-            <div id="dummy-industry"></div>
-            <br><br>
-            <h3 id="Industry">Industry</h3>
-            <h4 id="White-Papers">White Papers</h4>
-            <p>Words describing what I did during my time working with the AAI. During this time, we created three industy white papers. <br><br>
-
-                The first was <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4012999" target="_blank">"Anticipating the Next Generation of Powerful Digital Players: Implications for Competition Policy"</a>. <br><br>
-
-                Timewarner <br><br>
-
-                Jetblue
-
-                <!--The second was <a href="https://journals.sagepub.com/doi/abs/10.1177/10659129211034561" target="_blank">"Bridging the Divide: Does Social Capital Moderate the Impact of Polarization on Health?", published in Political Research Quarterly</a>. <br><br>
-                was something else. -->
-            </p>
-
-    </div>
 </body>
 </html>
