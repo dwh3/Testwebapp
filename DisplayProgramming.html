@@ -71,6 +71,7 @@
 </button>
 <div class="content" id="lessonContent">
   <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/GoogleMapsAPIRetrieval.html')">Google Maps API</button>
+  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/TreatmentUseCenterAnalysis.html')">Treatment Use Center Analysis</button>
 </div>
 
 <iframe id="lectureFrame" src="https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/GoogleMapsAPIRetrieval.html" style="width:100%;height:700px;"></iframe>
@@ -107,6 +108,42 @@
     }
     event.target.classList.add("active");
   }
+
+  // Function to get query parameters
+  function getQueryParams() {
+    let queryParams = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+        queryParams[key] = value;
+    });
+    return queryParams;
+  }
+
+  // Function to load the lecture indicated by the query parameter
+  window.onload = function() {
+    let params = getQueryParams();
+    if (params.lecture) {
+        let lectureUrl;
+        switch (params.lecture) {
+            case 'GoogleMapsAPI':
+                lectureUrl = 'https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/GoogleMapsAPIRetrieval.html';
+                break;
+            case 'TreatmentUseCenterAnalysis':
+                lectureUrl = 'https://dwh3.github.io/Testwebapp/ProgrammingDemonstrations/TreatmentUseCenterAnalysis.html';
+                break;
+            // Add more cases if you have more lectures
+        }
+        if (lectureUrl) {
+            changeLecture(lectureUrl);
+            // Highlight the corresponding button
+            let buttons = document.querySelectorAll("#lessonContent button");
+            for (let i = 0; i < buttons.length; i++) {
+                if (buttons[i].getAttribute('onclick').includes(lectureUrl)) {
+                    buttons[i].classList.add("active");
+                }
+            }
+        }
+    }
+  };
 </script>
 
 </body>
