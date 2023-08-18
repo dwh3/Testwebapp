@@ -12,14 +12,18 @@
         }
         
         .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             top: 30px; 
             width: 100%;
             background-color: #ffffff;
-            padding: 10px;
+            padding: 10px 0;
             border-bottom: 1px solid #a2a9b1;
             z-index: 1;
         }
+
         .content {
             margin: 20px auto;
             background-color: #ffffff;
@@ -108,13 +112,26 @@
             padding: 10px;
             text-align: center;
         }
+        .header-name {
+    padding-left: 6%;  /* Adjust as needed */
+        }
+
+        .header-email {
+            padding-right: 2%;  /* Adjust as needed */
+        }
+
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>David Hummel</h1>
+        <h1 class="header-name">David Hummel</h1>
+        <p class="header-email">Email: <a href="mailto:hummel.d@northeastern.edu">hummel.d@northeastern.edu</a></p>
     </div>
+    
+    
+    
+    
 
     <!-- Disclaimer -->
     <div class="disclaimer">
@@ -123,12 +140,15 @@
     
     <!-- Sidebar with links to sections -->
     <div class="sidebar">
+        <h3>Content Overview</h3> <!-- This is the new label --><br>
         <!--<a href="#My-Background">My Background</a>-->
         <a href="#dummy-my-background">Background</a>
+        <a href="#dummy-Education">Education</a>
+        <a href="#dummy-Professional-Experience">Professional Experience</a>
         <a href="#dummy-Teaching">Teaching</a>
         <a href="#dummy-Research">Academic Research</a>
         <a href="#dummy-Programming">Programming</a>
-        <a href="#dummy-Managing">Managing</a>
+        
        <!-- The following will make a collapsible section
         <details>
             <summary>Research</summary>
@@ -145,32 +165,67 @@
         <div id="dummy-my-background"></div>
         <h2 id="My-Background">Background</h2>
         <div class="line"></div>
-        <div class="content-row">
-            <p>Raised in the scenic town of Moundsville, West Virginia, I developed a deep-seated passion for mathematics from a young age.
-                 This passion led me to Ohio State University, where he pursued an undergraduate degree in engineering. 
-                 While a senior at Ohio State, I took an Operations Research course which sparked my interest in the generalizable tools Operations Research and Economics offer. 
+        <!--<div class="content-row">-->
+            <p>Welcome to my webpage, and thank you for stopping by! I'm David Hummel, currently deepening my knowledge in the Economics Ph.D. program at Northeastern 
+                University. Over the past five years, alongside my academic journey, I've embraced various roles in external firms. My lifelong fascination with mathematics 
+                and logical reasoning has evolved into a profound appreciation for computer science. I'm driven by a desire to harness my skills and make a tangible impact. 
+                As you explore further, you'll discover highlights of my professional and academic milestones, my foundational skillset, and the passions I'm currently pursuing.
+                  
                 <br>
             </p>
-            <div class="grey-box"></div>
-        </div>
-        <div style="height: 0cm;"></div>
+           <!-- <div class="grey-box"></div>-->
+        <!--</div>-->
+        <div style="height: 0.3cm;"></div>
+
+        <div id="dummy-Education"></div>
+        <h2 id="Education">Education</h2>
+        <div class="line"></div>
         
+        <!-- The Ohio State University -->
+        <h3 id="OhioStateUniversity">The Ohio State University, Columbus, OH</h3>
+        <p>
+            <strong>BSc in Industrial Systems and Engineering</strong> &nbsp; &nbsp; Aug. 2012 – May 2016<br> <br>
+            My passion for mathematics and problem solving led me to pursue a Bachelor's degree in Industrial Systems and Engineering at The Ohio State Univeristy.
+             This provided me with a robust understanding of engineering principles, systems optimization, and the interdisciplinary nature
+              of engineering and its applications in various industries.
+            While a senior at Ohio State, I took an Operations Research course which sparked my interest in the optimization practices.
+        </p>
+
+
+        <!-- Northeastern University -->
+        <h3 id="NortheasternUniversity">Northeastern University, Boston, MA</h3>
+        <p>
+            <strong>PhD in Economics</strong>  &nbsp; &nbsp; Aug. 2018 – Present<br><br>
+            With renewed appreciation of the generalizable tools Operations Research and Economics offer, I decided to pursue a Ph.D. in Economics at Northeastern University.
+            At Northeastern University, I embarked on a comprehensive study of Economics, diving deep into both theoretical and applied aspects of the field. 
+            My journey here has equipped me with advanced analytical skills and a profound understanding of economic principles and their real-world applications.
+        </p>
+        <div style="height: 0.1cm;"></div>
+        
+
+
+        
+
+
+
+
+        <div style="height: 0.2cm;"></div>
         <div id="dummy-Professional-Experience"></div>
         <h2 id="ProfessionalCareer">Professional Experience</h2>
         <div class="line"></div>
         <h3 id="LockheedMartin">Lockheed Martin</h3>
         <p>
-            The main project involved combining Business Intelligence tools, VBA, and batch scripting to generate reports by product area.
-             These reports were automated to be sent to the inbox of area managers daily and displayed on screens throughout the facility. 
-             This allowed managers to spend less time generating reports while giving me visibility to manufacturers as to their performance. <br><br>
+            In my main project at Lockheed Martin, I combined Business Intelligence tools, VBA, and batch scripting to generate reports by product area.
+            I automated these reports to be sent daily to the inboxes of area managers and displayed them on television screens throughout the facility.
+            This automation enabled managers to spend less time on report generation while giving them a clear snapshot of the manufacturers' performance. <br><br>
 
 
-            The second project was a collaboration with the senior in-house Oracle developer. Part of the building process involved retrieving large 
-            amounts of small parts within a warehouse and putting them together in a kit. The application we developed allowed for reduced time in collecting 
-            parts while also allowing for the kit to be tracked throughout the process, including any parts not in stock but with which the process could be started without. <br><br>
+            In my second project, I collaborated with the senior in-house Oracle developer. Together, we addressed a challenge in the building process where numerous
+             small parts had to be retrieved from a warehouse and assembled into a kit. We designed an application that expedited the collection of these parts and 
+             facilitated the tracking of each piece of equipment throughout the assembly process. This system also accounted for out-of-stock parts, allowing the assembly to commence without them. <br><br>
    
-           While I had a great experience at Lockheed Martin, I wanted to pursue a more generalizable toolkit. With this, my experience with Operations Research, and my newfound
-            passion for computer science,  I decided to pursue what I saw as the perfect blend of these: Economics. <br><br>
+             I thoroughly enjoyed my time at Lockheed Martin but felt a pull toward acquiring a more versatile toolkit. Drawing from my background in Operations Research and my growing passion for computer science,
+              I chose to delve into Economics, which I saw as the ideal fusion of these fields. <br><br>
         
 
          
@@ -185,43 +240,50 @@
 
         <h3 id="FederalReserve">Federal Reserve Bank of Boston</h3>
         <p>
-            From the Spring of my first year of my Ph.D. to the Fall of my second year, I worked at the Federal Reserve Bank of Boston in their Payments Strategies group. 
-            During this time, I worked on a variety of projects. The first was the 2019 Federal Reserve Mobile Financial Services Survey, which surveyed over 2,000 financial
-             institutions on their mobile banking and payment offerings. The group had just finished the survey design when I was brought on. I was tasked with automating documenting
-              the returned responses, cleaning the data, and analyzing it. Due to its sensitive nature, I used VBA for all of these.<br><br>
+            In the Spring of my first year in the Ph.D. program, I joined the Federal Reserve Bank of Boston's Payments Strategies group. I continued working there until the Fall of my
+             second year. During my tenure, I took on various projects. One of my primary responsibilities was the 2019 Federal Reserve Mobile Financial Services Survey, which gathered 
+             data from over 2,000 financial institutions about their mobile banking and payment services. When I joined, the team had just completed the survey design. I took the initiative
+              to automate the documentation of returned responses, clean the data, and conduct its analysis. Given the sensitive nature of the information, I exclusively used VBA for these tasks.<br><br>
          
-            The main project focused on payments fraud. I was tasked with developing a model of fraud types and mitigation strategies. I leveraged industry white papers on fraud types
-             and mitigation strategies to do this.
+              In my primary project, I delved into the realm of payment fraud. My responsibility was to create a comprehensive model detailing various types of fraud and their corresponding mitigation
+               strategies. To achieve this, I collaborated with an undergraduate intern whom I managed. Together, we scoured numerous papers on fraud types and mitigation techniques. I distilled the 
+               information into its essential components, synthesizing a clear and concise model. My team then introduced this model to financial institutions, providing insights into potential threats
+                and offering actionable strategies to safeguard against these vulnerabilities.
 
         </p>
         <div style="height: 0.1cm;"></div>
 
         <h3 id="AAI">American Antitrust Institute</h3>
         <p>
-        From the Spring of my third year of my Ph.D. to the Spring of the fourth year, I worked as a Research Fellow at the American Antitrust Institute.
-        This experience in policy advocacy was invaluable. I worked on a variety of projects, including:
+            During the Spring of my third year through to the Spring of my fourth year in the Ph.D. program, I served as a Research Fellow at the American Antitrust Institute. 
+            This role provided me with invaluable insights into policy advocacy. I took the lead on several projects, including:
 
-        <ul>
-            <li><a href="https://publicknowledge.org/policy/public-knowledge-and-american-antitrust-institute-doj-letter-on-discovery-warnermedia-merger/" target="_blank">A comment to the Attorney General</a>
-                on the proposed merger of Time Warner and Discovery, in conjunction with Public Knowledge, in which I reviewed claims of efficiency gains from past mergers and economic arguments made in prior filings. 
-            </li>
-
-            <li><a href="https://www.antitrustinstitute.org/wp-content/uploads/2021/10/AAI-Ltr-on-NEA_10.13.21_Final.pdf" target="_blank">A comment to the Secretary of Transportation,</a>
-                regarding the proposed code sharing arrangement between American Airlines and JetBlue. For this I reviewed the code-sharing literature and extended it to the case of these parties. 
-            </li>
-
-            <li>
-                The main project was <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4012999" target="_blank">"Anticipating the Next Generation of Powerful Digital Players: Implications for Competition Policy,"</a>
-                which aimed to identify the next generation of influential digital companies and the implications for competition policy. I was tasked with identifying these companies, using cluster analysis on product 
-                offerings to find counterfactual companies, and then evaluating the implications for competition policy.
-            </li>
+            <ul>
+                <li>
+                    Crafting <a href="https://publicknowledge.org/policy/public-knowledge-and-american-antitrust-institute-doj-letter-on-discovery-warnermedia-merger/" target="_blank">a comment for
+                         the Attorney General</a> about the proposed merger of Time Warner and Discovery. Collaborating with Public Knowledge, I critically reviewed efficiency gains claims from past 
+                         mergers and dissected economic arguments presented in prior filings.
+                </li>
+                <br>
+                <li>
+                    Drafting <a href="https://www.antitrustinstitute.org/wp-content/uploads/2021/10/AAI-Ltr-on-NEA_10.13.21_Final.pdf" target="_blank">a comment for the Secretary of Transportation</a> 
+                    concerning the proposed code-sharing arrangement between American Airlines and JetBlue. I delved into the code-sharing literature and tailored its insights specifically to the dynamics
+                     between these two airlines.
+                </li>
+                <br>
+                <li>
+                    Leading the project titled <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4012999" target="_blank">"Anticipating the Next Generation of Powerful Digital Players: Implications 
+                        for Competition Policy,"</a> where the goal was to pinpoint the upcoming influential digital companies and understand the ramifications for competition policy. I spearheaded the
+                         identification of these companies, employed cluster analysis on product offerings to discern potential counterfactual companies, and assessed the broader implications for competition policy.
+                </li>
+                
 
         </ul>
 
                 
 
         </p>       
-        <div style="height: 2cm;"></div>
+        <div style="height: 0.3cm;"></div>
 
 
 
@@ -229,20 +291,22 @@
         <h2 id="Teaching">Teaching</h2>
         <div class="line"></div>
         <p>
-            The first course I taught by myself was Intermediate Macroeconomics at Bentley University. The second course was a Master's level Econometrics at Northeastern University. 
-            The lectures for my course material <a href="https://dwh3.github.io/Testwebapp/DisplayLectures.html">can be found here</a>.
-            Also, during the Economics Ph.D. program at Northeastern University, each student must take a week-long Math Boot Camp at the beginning of their second year. I have taught this every year I have been 
-            in the program after my second year. This involves teaching Linear Algebra (<a href="https://dwh3.github.io/Testwebapp/EconometricsLectures/LinearAlgebraLectures.pdf" target="_blank">the material covered can be viewed/downloaded here</a>), 
-            and Static Optimization (<a href="https://dwh3.github.io/Testwebapp/EconometricsLectures/StaticOptimization.pdf" target="_blank">the material covered can be viewed/downloaded here</a>).
+            Teaching Intermediate Macroeconomics at Bentley University marked my first solo teaching experience. 
+            I then taught a Master's level Econometrics course at Northeastern University. 
+            You can explore the lectures for my Econometrics course <a href="https://dwh3.github.io/Testwebapp/DisplayLectures.html">here</a>.
+
+            While in the Economics Ph.D. program at Northeastern University, I've had the privilege of teaching the week-long Math Boot Camp for 
+            incoming second-year students. I've led this session every year since my second year in the program. In these sessions, I cover topics like
+             Linear Algebra—whose material you can <a href="https://dwh3.github.io/Testwebapp/EconometricsLectures/LinearAlgebraLectures.pdf" target="_blank">view or download here</a>—and Static Optimization, which you can also <a href="https://dwh3.github.io/Testwebapp/EconometricsLectures/StaticOptimization.pdf" target="_blank">view or download here</a>.
 
             <br><br>
            
-            Aside from this, I have been a Teaching Assitant for Econometrics at Harvard University and have been a Teaching Assistant for a variety of courses at Northeastern University, including: Bubbles, Busts
-            and Bailouts (a course evaluating the causes and fallouts from the 2008 Housing Crisis), Intermediate Macroeconomics, Intermediate Microeconomics, Introductory Econometrics, Capstone course, and 
-            Development Economics.
+            In addition to these teaching roles, I served as a Teaching Assistant for Econometrics at Harvard University. At Northeastern University, 
+            I've assisted in a range of courses, including Bubbles, Busts, and Bailouts (a deep dive into the causes and aftermath of the 2008 Housing Crisis),
+             Intermediate Macroeconomics, Intermediate Microeconomics, Introductory Econometrics, the Capstone course, and Development Economics.
         </p>
 
-            <div style="height: 2.25cm;"></div>
+            <div style="height: 0.4cm;"></div>
         <div id="dummy-Research"></div>
         <h2 id="Research">Academic Research</h2>
         <div class="line"></div>
@@ -253,21 +317,28 @@
 
             <h5 id="RAWIP">Research Assistant</h5>
 
-            <p> If not working as a teaching assistant (and most semesters I am doing both), I am working as a research assistant. I have worked on a variety of projects, which have allowed
-                me to develop an eclectic skillset. <br><br>
-
-                <ul>
-                    <li>A current paper looks at the opening of Public Juvenile Mental Health facilities (CAPS) in Brazil on schooling outcomes. In doing this, our team is leveraging healthcare
-                         data from the Brazil Ministry of Health and schooling data from the Brazil Ministry of Education for over 3 million treated children, matching them with control units using
-                          exact matching techniques and an event study framework to evaluate the impact of these facilities. While the specific schooling and treatment data are sensitive, part of this
-                           project involved retrieving the geolocations of the facilities.
-                            A demonstration of how I did this using Google Maps API can be found <a href="https://dwh3.github.io/Testwebapp/DisplayProgramming.html?lecture=GoogleMapsAPI"> here</a>.
-                    </li><br>
-                    <li>Another current paper, under review at an academic journal, evaluates the effect of the reformulation of OxyContin on Intimate Partner Violence (IPV) rates. To perform this analysis,
-                         my team needed records on reported incidents of IPV. To do this, I developed and implemented scripts to collect, clean, and merge controls into 30 years worth of FBI data, as the
-                          Uniform Crime Report reported.
-                    </li>
-                </ul>
+            <p>
+                Balancing my roles, I often work as a research assistant alongside my duties as a teaching assistant. This dual responsibility has introduced me to myriad projects,
+                 each contributing to my growing and diverse skillset. In one such project, I was the bridge between my manager, Professor Bilge Erten, and a trio of undergraduate students. 
+                 Navigating this inter-generational dynamic, I emphasized transparent communication, set clear expectations, and nurtured a cooperative and efficient work environment.
+                 The following are the more notable projects I have worked on the Professor Erten.
+            </p>
+            
+            <ul>
+                <li>
+                    One ongoing research delves into the impact of the inauguration of Public Juvenile Mental Health facilities (CAPS) in Brazil on educational outcomes. Our team is harnessing
+                     healthcare data from Brazil's Ministry of Health and educational data from its Ministry of Education. This massive dataset encompasses over 3 million children. We match these
+                      children with control units using precise matching techniques and employ an event study framework to assess the influence of these facilities. While the specific data on education
+                       and treatment is confidential, a segment of this project required pinpointing the geolocations of the facilities. I achieved this using the Google Maps API, and you can view
+                        a demonstration of my approach <a href="https://dwh3.github.io/Testwebapp/DisplayProgramming.html?lecture=GoogleMapsAPI">here</a>.
+                </li>
+                <br>
+                <li>
+                    Another paper under peer review investigates the repercussions of OxyContin's reformulation on Intimate Partner Violence (IPV) rates. Our analysis demanded a comprehensive record 
+                    of reported IPV incidents. I crafted and executed scripts to gather, refine, and integrate controls into three decades of data from the FBI's Uniform Crime Report.
+                </li>
+            </ul>
+            
 
 
             </p>
@@ -275,40 +346,45 @@
             <h5 id="OWNWIP">Dissertation</h5>
 
 
-            <p> 
-                My disseration is composed of three chapters:
-
-                <ul>
-                    <li>
-                        The first chapter, which began as a project for my RA work, looks at the price dynamics when an initially small, disruptive firm grows and resembles an incumbent firm.
-                        In this, I developed a dynamic maximization model of a firm's pricing strategy, which I then used to simulate the price dynamics of a firm as it grows. The model predicts
-                        that the firm will initially appear disruptive in the sense that prices decrease, and the price subsequently rises as they grow. We also found this holding empirically with 
-                        the case of Southwest Airlines.
-                    </li><br>
-                    <li>
-                        The second chapter is an extension of my RA work studying Intimate Partner Violence. In this, I am evaluating the effect of Substance use treatment facilities on Intimate Partner Violence.
-                        The same dataset on crime is used, but I scraped data on treatment facilities from the Substance Abuse and Mental Health Services Administration (SAMHSA) website, the code for which
-                        I will be uploading soon.
-                    </li><br>
-                    <li>
-                        The third paper stems from my work at the American Antitrust Institute, and looks at the US beef market. In this, I am evaluating how beef processors use contractual procurement
-                        to suppress the price paid for cattle, and evaluate if the path of this decrease is consistent with competition.
-                       
-                    </li>
-                </ul>
-                
+            <p>
+                My dissertation comprises three distinct chapters, each reflecting a unique area of research:
             </p>
+            
+            <ul>
+                <li>
+                    The inaugural chapter originated from a project during my RA tenure. It delves into the price dynamics observed when a nascent, disruptive firm expands to mirror the stature of an 
+                    established incumbent. I crafted a dynamic model to simulate a firm's pricing strategy as it evolves. This model anticipates an initial phase where the firm disrupts the market with
+                     declining prices, followed by a surge in prices as the firm matures. Empirically, this trajectory was evident in the case study of Southwest Airlines.
+                </li>
+                <br>
+                <li>
+                    Building on my RA research on Intimate Partner Violence, the second chapter assesses the impact of substance use treatment facilities on such violence. While I utilized the same 
+                    crime dataset, I also extracted data on treatment facilities from the Substance Abuse and Mental Health Services Administration (SAMHSA) website. I'll be sharing the code for this
+                     data extraction shortly.
+                </li>
+                <br>
+                <li>
+                    The final chapter, inspired by my tenure at the American Antitrust Institute, focuses on the US beef market. I'm investigating the tactics employed by beef processors, specifically 
+                    how they leverage contractual procurement to depress cattle prices. My analysis seeks to determine if the trajectory of this price reduction aligns with competitive market behaviors.
+                </li>
+            </ul>
+            
 
 
 
 
             <h4 id="Publications">Publications</h4>
-            <p>During my second summer of the Ph.D. program, I worked as a Research Assistant in a multidisciplinary team of political scientists and public health experts, studying the link between political 
-                polarization and health outcomes. While the group had already conducted a survey, I was tasked with conducting a literature review to justify a modeling framework to be used and implementing the
-                 model. The results of this work were published in two papers.The first was 
-                <a href="https://academic.oup.com/pnasnexus/article/1/1/pgac011/6545770" target="_blank">"The harmful effects of partisan polarization on Health," published in PNAS NEXUS</a>.
-                The second was <a href="https://journals.sagepub.com/doi/abs/10.1177/10659129211034561" target="_blank">"Bridging the Divide: Does Social Capital Moderate the Impact of Polarization on Health?" published in Political Research Quarterly</a>. <br><br>
-
+            <p><ul>
+                <li>Fraser, T., Aldrich, D. P., Panagopoulos, C., Hummel, D., & Kim, D. (2022). <a href="https://doi.org/10.1093/pnasnexus/pgac011" target="_blank">The harmful effects of partisan polarization on health</a>. PNAS Nexus, 1(1), pgac011.</li> <br>
+                <li>Panagopoulos, C., Fraser, T., Aldrich, D. P., Kim, D., & Hummel, D. (2022). <a href="https://doi.org/10.1177/10659129211034561" target="_blank">Bridging the Divide: Does Social Capital Moderate the Impact of Polarization on Health?</a>. Political Research Quarterly, 75(3), 875–891.</li>
+            </ul>
+            
+            
+            During my second summer in the Ph.D. program, I collaborated with a multidisciplinary team of political scientists and public health experts. 
+            Our focus was on exploring the connection between political polarization and health outcomes. While the team had already gathered survey data, 
+            I took on the responsibility of conducting a literature review. This review helped establish a solid foundation for our modeling framework. 
+            I then implemented the model, and our collective efforts culminated in the publication of the two papers listed above.
+            
             </p>
 
 
@@ -318,25 +394,18 @@
         <div class="line"></div>
 
         <h3 id="ResearchProgramming">Programming for Research</h3>
-        <p>Include link to the research projects I have
-            Code samples mentioned above can be found <a href="https://dwh3.github.io/Testwebapp/DisplayProgramming.html?lecture=TreatmentUseCenterAnalysis"> here</a>. <br><br>
+        <p>
+            All code samples mentioned above can be found <a href="https://dwh3.github.io/Testwebapp/DisplayProgramming.html?lecture=TreatmentUseCenterAnalysis"> here</a>. <br><br>
 
-            I have also been teaching myself C++, as well as general computer science concepts by working through LeetCode problems. 
-            My profile can be found <a href="https://leetcode.com/dwh3/" target="_blank">here</a>. <br><br> 
+            In addition to my primary pursuits, I've embarked on a journey of continuous 
+            learning both out of personal interest and to further hone my technical skills.
+             I've been self-learning C++, sharpening my SQL skills,  and diving deep into general computer
+              science concepts through LeetCode problems. My progress can be seen on my LeetCode profile
+              , which is available <a href="https://leetcode.com/dwh3/" target="_blank">here</a>. 
+              Furthermore, I'm actively enhancing my understanding of Machine Learning by taking courses on Coursera.
 
-            Also, this website you are on serves as evidence of my ability
-            to learn development concepts.
         </p>
 
-        <div style="height: 1.45cm;"></div>
-        <div id="dummy-Managing"></div>
-        <h2 id="Managing">Managing</h2>
-        <div class="line"></div>
-
-        <p> 
-            In both my roles at the Federal Reserve and as an RA with Professor Bilge Erten, I have liaised between my managers and an undergraduate 
-            team of three in an inter-generational setting, effectively managing communication and expectations while promoting a collaborative and productive environment.
-        </p>
 
     </div>
 </body>
