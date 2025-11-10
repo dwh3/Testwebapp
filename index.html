@@ -5,123 +5,334 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="David W Hummel III, Ph.D. - Economist specializing in industrial organization, econometrics, and data analytics. Currently Data Analyst at NYSIF and independent economist.">
     <meta name="author" content="David W Hummel III">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dwh3.phd">
+    <meta property="og:title" content="David W Hummel III, Ph.D. - Economist">
+    <meta property="og:description" content="Economist specializing in industrial organization, econometrics, and data analytics. Published researcher with expertise in competition policy, public health economics, and applied econometrics.">
+    <meta property="og:site_name" content="David W Hummel III">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="David W Hummel III, Ph.D. - Economist">
+    <meta name="twitter:description" content="Economist specializing in industrial organization, econometrics, and data analytics.">
+
     <title>David W Hummel III, Ph.D. - Economist</title>
     <style>
+        /* Global Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f6f6f6;
-            scroll-padding-top: 100px; 
+            background-color: #FAFAFA;
+            scroll-padding-top: 100px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
         }
-        
+
+        /* Header Styles */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            top: 30px; 
+            top: 30px;
             width: 100%;
             background-color: #ffffff;
             padding: 10px 0;
             border-bottom: 1px solid #a2a9b1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             z-index: 1;
         }
 
+        .header-name {
+            padding-left: 6%;
+            color: #1a1a1a;
+        }
+
+        .header-email {
+            padding-right: 2%;
+        }
+
+        .header-email a {
+            color: #2C5F8D;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header-email a:hover {
+            color: #0066CC;
+            text-decoration: underline;
+        }
+
+        /* Content Styles */
         .content {
             margin: 20px auto;
+            max-width: 1200px;
             background-color: #ffffff;
-            padding: 20px;
-            border: 1px solid #a2a9b1;
+            padding: 30px 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
+
         .content-row {
             display: flex;
             justify-content: space-between;
         }
+
         .content-row p {
             width: 80%;
         }
-        .grey-box {
-            width: 12%;
-            height: 7cm;
-            background-color: lightgrey;
-            margin-right: 1cm;
+
+        /* Typography */
+        h1 {
+            font-size: 2em;
+            color: #1a1a1a;
+            margin: 0;
         }
-        h1, h2 {
-            color: #222222;
+
+        h2 {
+            font-size: 1.75em;
+            color: #2C5F8D;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
         }
+
+        h3 {
+            font-size: 1.35em;
+            color: #1a1a1a;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            color: #2C5F8D;
+            margin-top: 1.2em;
+        }
+
+        h5 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-top: 1em;
+        }
+
         p {
             color: #333333;
+            margin-bottom: 1em;
         }
+
+        /* Links */
+        a {
+            color: #2C5F8D;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0066CC;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #5a3d8a;
+        }
+
+        a[target="_blank"]::after {
+            content: " ↗";
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+
+        /* Lists */
+        ul {
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: #1a1a1a;
+        }
+
+        /* Dividers */
         .line {
-            height: 1px;
-            background-color: #a2a9b1;
-            margin: 10px auto;
+            height: 2px;
+            background: linear-gradient(to right, #2C5F8D, #a2a9b1);
+            margin: 10px 0 20px 0;
             width: 100%;
+            border-radius: 1px;
         }
-        .line2 {
-            height: 1px;
-            background-color: #a2a9b1;
-            margin: 10px auto;
-            width: 80%;
-        }
-        
+
+        /* Sidebar Styles */
         .sidebar {
             position: fixed;
-            top: 150px; 
+            top: 150px;
             left: 0;
             width: 200px;
-            height: calc(100% - 60px); 
+            height: calc(100% - 60px);
             background-color: #f6f6f6;
             padding: 20px;
             overflow: auto;
+            border-right: 1px solid #e0e0e0;
         }
 
-       
+        .sidebar h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-top: 0;
+        }
+
         .sidebar a {
             display: block;
-            color: blue;
+            color: #2C5F8D;
             text-decoration: none;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            padding: 5px 0 5px 8px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
         }
+
+        .sidebar a:hover {
+            color: #0066CC;
+            border-left: 3px solid #0066CC;
+            padding-left: 12px;
+            background-color: rgba(0, 102, 204, 0.05);
+        }
+
         details a {
             padding-left: 30px;
         }
-        a {
-            margin-top: 10px;
-        }
 
-
-
-        
+        /* Main Content Area */
         .main-content {
             margin-left: 220px;
             padding: 20px;
-            padding-top: 90px; 
+            padding-top: 90px;
+            max-width: 1400px;
         }
+
         div[id^="dummy-"] {
             position: relative;
-            top: -120px; 
+            top: -120px;
             visibility: hidden;
         }
-       
+
+        /* Disclaimer */
         .disclaimer {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 2;
             background-color: #f6f6f6;
-            color: #333;
+            color: #555;
             font-size: 0.8em;
             padding: 10px;
             text-align: center;
-        }
-        .header-name {
-    padding-left: 6%;  /* Adjust as needed */
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .header-email {
-            padding-right: 2%;  /* Adjust as needed */
+        .disclaimer a {
+            color: #2C5F8D;
+            font-weight: 500;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #2C5F8D;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        #backToTop:hover {
+            background-color: #0066CC;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+                padding-top: 70px;
+            }
+
+            .header {
+                flex-direction: column;
+                top: 30px;
+                padding: 15px 0;
+                text-align: center;
+            }
+
+            .header-name {
+                padding-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .header-email {
+                padding-right: 0;
+            }
+
+            .content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 15px;
+            }
         }
 
     </style>
@@ -171,12 +382,15 @@
         <h2 id="My-Background">Background</h2>
         <div class="line"></div>
         <!--<div class="content-row">-->
-            <p>Welcome to my webpage, and thank you for stopping by! I'm David Hummel, an economist with a Ph.D. from Northeastern University (2024).
-                Currently, I work as a Data Analyst at the New York State Insurance Fund, where I develop machine learning solutions and lead analytics initiatives,
-                while also providing independent economic consulting services for healthcare technology implementations. My career bridges economics, data science, and policy analysis,
-                with expertise spanning industrial organization, econometrics, and causal inference. My lifelong fascination with mathematics and logical reasoning has evolved
-                into a practical toolkit combining economic theory with advanced programming and statistical methods. As you explore further, you'll discover highlights
-                of my professional journey, academic research, teaching experience, and technical skillset.
+            <p>I'm an economist specializing in industrial organization, econometrics, and data analytics. Currently, I serve as a Data Analyst at the New York State Insurance Fund,
+                where I develop machine learning solutions and lead analytics initiatives, while also providing independent consulting for healthcare economics projects.
+                My career bridges economics, data science, and policy analysis, with expertise spanning industrial organization, econometrics, and causal inference.
+
+                <br><br>
+
+                I completed my Ph.D. in Economics at Northeastern University in 2024, where my dissertation examined competition dynamics, public health policy, and market power
+                in industrial organization. My fascination with mathematics and logical reasoning has evolved into a practical toolkit combining economic theory with advanced
+                programming and statistical methods. Below, you'll find highlights of my professional journey, academic research, teaching experience, and technical skillset.
 
                 <br>
             </p>
@@ -195,7 +409,7 @@
             My passion for mathematics and problem solving led me to pursue a Bachelor's degree in Industrial Systems and Engineering at The Ohio State University.
              This provided me with a robust understanding of engineering principles, systems optimization, and the interdisciplinary nature
               of engineering and its applications in various industries.
-            While a senior at Ohio State, I took an Operations Research course which sparked my interest in the optimization practices.
+            While a senior at Ohio State, I took an Operations Research course which sparked my interest in optimization.
         </p>
 
 
@@ -203,9 +417,9 @@
         <h3 id="NortheasternUniversity">Northeastern University, Boston, MA</h3>
         <p>
             <strong>PhD in Economics</strong>  &nbsp; &nbsp; Aug. 2018 – May 2024<br><br>
-            With renewed appreciation of the generalizable tools Operations Research and Economics offer, I decided to pursue a Ph.D. in Economics at Northeastern University.
-            At Northeastern University, I embarked on a comprehensive study of Economics, diving deep into both theoretical and applied aspects of the field. 
-            My journey here has equipped me with advanced analytical skills and a profound understanding of economic principles and their real-world applications.
+            With renewed appreciation of the generalizable tools Operations Research and Economics offer, I pursued a Ph.D. in Economics at Northeastern University.
+            My doctoral studies focused on industrial organization, public policy, and applied econometrics, equipping me with advanced analytical skills and a deep understanding
+            of economic principles and their real-world applications. My dissertation examined competition dynamics, public health interventions, and market power across three distinct essays.
         </p>
         <div style="height: 0.1cm;"></div>
         
@@ -459,5 +673,28 @@
 
 
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
