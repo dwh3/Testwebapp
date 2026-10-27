@@ -1,142 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Econometrics lecture materials from David W Hummel III.">
+  <title>Lecture Materials | David W Hummel III</title>
   <style>
-    
-    .collapsible {
-      cursor: pointer;
-      padding: 18px 40px 18px 50px; 
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      background-color: #f1f1f1;
-      position: relative;
-    }
-
-   
-    .arrow {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      left: 18px; 
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .arrow::before {
-      content: '\25B6'; 
-      font-size: 16px;
-    }
-
-    .collapsible.active .arrow::before {
-      content: '\25BC'; 
-    }
-
-    .content {
-      display: none;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f1f1f1;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    
-    .content button {
-      display: none;
-      margin-bottom: 8px;
-      margin-right: 8px; 
-      width: fit-content; 
-    }
-
-    
-    .content button.active {
-      background-color: blue;
-      color: white;
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fafafa; color: #333; font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
+    a { color: #245578; }
+    a:focus-visible, select:focus-visible { outline: 3px solid #d57700; outline-offset: 3px; }
+    header { background: #fff; border-bottom: 1px solid #d9e2e9; padding: 16px 24px; }
+    header a { text-decoration: none; font-weight: 600; }
+    main { max-width: 1200px; margin: 28px auto; padding: 0 20px 32px; }
+    h1 { color: #163d5e; margin: 0 0 8px; line-height: 1.2; }
+    .intro { margin: 0 0 24px; }
+    .chooser { background: #f1f6fa; border: 1px solid #d5e2ec; padding: 20px; border-radius: 6px; }
+    label { display: block; font-weight: 700; color: #163d5e; margin-bottom: 6px; }
+    select { width: 100%; max-width: 500px; min-height: 44px; padding: 8px; background: #fff; border: 1px solid #6d8190; border-radius: 4px; font: inherit; }
+    .helper { margin: 8px 0 0; font-size: .9rem; }
+    .lesson { margin-top: 24px; }
+    .lesson h2 { color: #163d5e; margin: 0 0 8px; font-size: 1.3rem; }
+    iframe { display: block; width: 100%; height: 75vh; min-height: 500px; border: 1px solid #b9c8d2; background: white; }
+    [hidden] { display: none !important; }
+    @media(max-width: 600px) { header { padding: 14px 16px; } main { margin-top: 20px; padding: 0 16px 24px; } .chooser { padding: 16px; } iframe { height: 70vh; min-height: 400px; } }
   </style>
 </head>
 <body>
-
-<!-- Link the "Homepage"  URL -->
-<a href="https://dwh3.github.io/Testwebapp/">Homepage</a>
-<h2>Lecture Materials</h2>
-
-<!-- Collapsible section for buttons -->
-<button class="collapsible" onclick="toggleCollapsible()">
-  <span class="arrow"></span>
-  Select Lesson
-</button>
-<div class="content" id="lessonContent">
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html')" class="active">R Basics</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Functions and Packages.html')">Functions and Packages</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Programming and Scripts.html')">Programming and Scripts</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html')">Vectors and Matrices in R</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Data Manipulation.html')">Data Manipulation</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Datasets.html')">Datasets</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Graphics.html')">Graphics</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - PDFs and CDFs.html')">PDFs and CDFs</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - Probability Basics.html')">Probability Basics</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Features of Normal Dist-Z Scores.html')">Features of Normal Dist-Z Scores</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Key Distributions.html')">Key Distributions</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/T Distributions (Small Samples).html')">T Distributions (Small Samples)</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing.html')">Hypothesis Testing</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Sampling - CLT - Confidence Intervals.html')">Sampling - CLT - Confidence Intervals</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Simulations.html')">Simulations</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Linear Regression and OLS.html')">Linear Regression and OLS</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Derivation of OLS.html')">Derivation of OLS</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Expectations and OVB.html')">Expectations and OVB</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing and RSquared.html')">Hypothesis Testing and RSquared</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Clean Regression Results.html')">Clean Regression Results</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Multicollinearity.html')">Multicollinearity</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Violations of Unbiasedness.html')">Violations of Unbiasedness</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Categorical Independent Variables.html')">Categorical Independent Variables</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Interaction Terms.html')">Interaction Terms</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Non-linear Functional Forms.html')">Non-linear Functional Forms</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Logistic Regression.html')">Logistic Regression</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Lasso and Ridge Regressions.html')">Lasso and Ridge Regressions</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Supervised Learning.html')">Supervised Learning</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Unsupervised Learning.html')">Unsupervised Learning</button>
-  <button onclick="changeLecture('https://dwh3.github.io/Testwebapp/EconometricsLectures/Support Vector Machines.html')">Support Vector Machines</button>
-</div>
-
-<iframe id="lectureFrame" src="https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html" style="width:100%;height:700px;"></iframe>
-
-<script>
-  
-  function toggleCollapsible() {
-    var content = document.getElementById("lessonContent");
-    var buttons = document.querySelectorAll("#lessonContent button");
-
-    if (content.style.display === "block") {
-      
-      content.style.display = "none";
-      for (var i = 0; i < buttons.length; i++) {
-        buttons[i].style.display = "none";
-      }
-    } else {
-      
-      content.style.display = "block";
-      for (var i = 0; i < buttons.length; i++) {
-        buttons[i].style.display = "inline-block";
-      }
-    }
-
-    document.querySelector(".collapsible").classList.toggle("active");
-  }
-
-  function changeLecture(lectureUrl) {
-    document.getElementById('lectureFrame').src = lectureUrl;
-    
-    var buttons = document.querySelectorAll("#lessonContent button");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("active");
-    }
-    event.target.classList.add("active");
-  }
-</script>
-
+  <header><a href="./index.html">← Back to David Hummel’s website</a></header>
+  <main>
+    <h1>Lecture Materials</h1>
+    <p class="intro">Explore econometrics and computational statistics lectures.</p>
+    <section class="chooser" aria-labelledby="lesson-label">
+      <label id="lesson-label" for="lesson">Choose a lecture</label>
+      <select id="lesson">
+        <option value="">Select a lecture</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/R Basics.html">R Basics</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Functions and Packages.html">Functions and Packages</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Programming and Scripts.html">Programming and Scripts</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/R Vectors and Matrices.html">Vectors and Matrices in R</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Data Manipulation.html">Data Manipulation</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Datasets.html">Datasets</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Graphics.html">Graphics</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - PDFs and CDFs.html">PDFs and CDFs</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Stats Intro - Probability Basics.html">Probability Basics</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Features of Normal Dist-Z Scores.html">Features of Normal Dist-Z Scores</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Key Distributions.html">Key Distributions</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/T Distributions (Small Samples).html">T Distributions (Small Samples)</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing.html">Hypothesis Testing</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Sampling - CLT - Confidence Intervals.html">Sampling - CLT - Confidence Intervals</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Simulations.html">Simulations</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Linear Regression and OLS.html">Linear Regression and OLS</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Derivation of OLS.html">Derivation of OLS</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Expectations and OVB.html">Expectations and OVB</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Hypothesis Testing and RSquared.html">Hypothesis Testing and RSquared</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Clean Regression Results.html">Clean Regression Results</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Multicollinearity.html">Multicollinearity</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Violations of Unbiasedness.html">Violations of Unbiasedness</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Categorical Independent Variables.html">Categorical Independent Variables</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Interaction Terms.html">Interaction Terms</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Non-linear Functional Forms.html">Non-linear Functional Forms</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Logistic Regression.html">Logistic Regression</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Lasso and Ridge Regressions.html">Lasso and Ridge Regressions</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Supervised Learning.html">Supervised Learning</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Unsupervised Learning.html">Unsupervised Learning</option>
+        <option value="https://dwh3.github.io/Testwebapp/EconometricsLectures/Support Vector Machines.html">Support Vector Machines</option>
+      </select>
+      <p class="helper">Choose a topic to load its lecture below. You can also open it in a separate tab.</p>
+    </section>
+    <section id="lecture" class="lesson" hidden aria-labelledby="lecture-heading">
+      <h2 id="lecture-heading">Selected lecture</h2>
+      <p><a id="open-lecture" target="_blank" rel="noopener noreferrer">Open lecture in a new tab</a></p>
+      <iframe id="lecture-frame" title="Selected lecture material"></iframe>
+    </section>
+  </main>
+  <script>
+    const selector = document.getElementById('lesson');
+    const section = document.getElementById('lecture');
+    const frame = document.getElementById('lecture-frame');
+    const openLink = document.getElementById('open-lecture');
+    const heading = document.getElementById('lecture-heading');
+    selector.addEventListener('change', () => {
+      const url = selector.value;
+      section.hidden = !url;
+      if (!url) { frame.removeAttribute('src'); openLink.removeAttribute('href'); return; }
+      heading.textContent = selector.options[selector.selectedIndex].text;
+      frame.src = url;
+      frame.title = heading.textContent + ' lecture material';
+      openLink.href = url;
+    });
+  </script>
 </body>
 </html>
+
