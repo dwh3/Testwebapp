@@ -335,7 +335,7 @@
             }
         }
 
-        /* Accessible, responsive navigation and a clearer introduction */
+        /* Accessible, responsive navigation */
         :root { --navy: #163d5e; --blue: #2C5F8D; }
         html { scroll-padding-top: 105px; }
         .header { top: 0; padding: 12px 0; z-index: 10; }
@@ -346,14 +346,6 @@
         .skip-link { position: absolute; left: 12px; top: -100px; z-index: 20; background: white; padding: 8px 12px; }
         .skip-link:focus { top: 8px; }
         :focus-visible { outline: 3px solid #d57700; outline-offset: 3px; }
-        .intro { background: #f1f6fa; border-left: 4px solid var(--blue); padding: 24px; margin-bottom: 24px; }
-        .intro .eyebrow { color: var(--blue); font-weight: 700; margin: 0 0 6px; }
-        .intro h2 { margin: 0 0 10px; color: var(--navy); font-size: 1.8rem; line-height: 1.25; }
-        .intro p { margin: 0 0 16px; }
-        .contact-button { display: inline-block; background: var(--navy); color: white !important; padding: 9px 17px; border-radius: 5px; font-weight: 600; }
-        .contact-button:hover { background: #245c88; color: white; }
-        .highlights { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 16px 0 0; list-style: none; }
-        .highlights li { margin: 0; padding: 4px 10px; background: white; border: 1px solid #ccdce8; border-radius: 4px; font-size: .9rem; }
         .mobile-nav { display: none; }
         .site-footer { margin: 30px auto 0; padding: 20px 0; color: #555; font-size: .85rem; }
         @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: 0.01ms !important; } }
@@ -366,8 +358,6 @@
             .mobile-nav summary { cursor: pointer; color: var(--navy); font-weight: 700; padding: 6px 0; }
             .mobile-nav a { display: block; padding: 9px 0; }
             .main-content { padding: 10px; }
-            .intro { padding: 18px; }
-            .intro h2 { font-size: 1.5rem; }
             div[id^="dummy-"] { top: -16px; }
         }
     </style>
@@ -423,15 +413,6 @@
 
     <div class="content">
         <div id="dummy-my-background"></div>
-        <section class="intro" aria-labelledby="intro-heading">
-            <p class="eyebrow">Economist · Portfolio Analytics &amp; AI Architect</p>
-            <h2 id="intro-heading">Financial data, built for insight.</h2>
-            <p>I build data infrastructure, software, and agents that connect investment information with analysis and reporting.</p>
-            <a class="contact-button" href="mailto:david.w.hummel@outlook.com">Contact me</a>
-            <ul class="highlights" aria-label="Areas of focus">
-                <li>Investment analytics</li><li>Document extraction</li><li>Relational databases</li><li>Software &amp; agents</li>
-            </ul>
-        </section>
         <h2 id="My-Background">Background</h2>
         <div class="line"></div>
         <!--<div class="content-row">-->
